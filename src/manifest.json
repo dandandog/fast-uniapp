@@ -1,8 +1,8 @@
 {
-    "name" : "",
+    "name" : "good-homework",
     "appid" : "",
     "description" : "",
-    "versionName" : "1.0.0",
+    "versionName" : "0.1.0",
     "versionCode" : "100",
     "transformPx" : false,
     "app-plus" : {
@@ -55,7 +55,7 @@
     /* 快应用特有相关 */
     "mp-weixin" : {
         /* 微信小程序特有相关 */
-        "appid" : "wxd758ba71cfd57356",
+        "appid" : "wx8a7fb59eef471c7b",
         "setting" : {
             "urlCheck" : false
         },

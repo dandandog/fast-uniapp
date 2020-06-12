@@ -38,7 +38,7 @@ const install = (Vue, vm) => {
 		// 	config.header[auth.TokenKey] = auth.getToken()
 		// }
 		// 可以对某个url进行特别处理，此url参数为this.$u.get(url)中的url值
-		if (config.url == '/user/login') config.header.noToken = true;
+		if (config.url === '/user/login') config.header.noToken = true;
 		// 最后需要将config进行return
 		return config;
 		// 如果return一个false值，则会取消本次请求
@@ -51,12 +51,12 @@ const install = (Vue, vm) => {
 		// if (res.header[auth.TokenKey]) {
 		// 	auth.setToken(res.header[auth.TokenKey])
 		// }
-		if (res.code == 200) {
+		if (res.code === 200) {
 			// res为服务端返回值，可能有code，result等字段
 			// 这里对res.result进行返回，将会在this.$u.post(url).then(res => {})的then回调中的res的到
 			// 如果配置了originalData为true，请留意这里的返回值
-			return res.result;
-		} else if (res.code == 201) {
+			return res.date;
+		} else if (res.code === 201) {
 			// 假设201为token失效，这里跳转登录
 			vm.$u.toast('验证失败，请重新登录');
 			setTimeout(() => {
