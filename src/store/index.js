@@ -13,6 +13,7 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 
 Vue.use(Vuex)
 
+
 const store = new Vuex.Store({
     modules,
     getters

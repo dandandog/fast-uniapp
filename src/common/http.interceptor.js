@@ -1,10 +1,9 @@
-import auth from '@/utils/auth.js'
 // 这里的vm，就是我们在vue文件里面的this，所以我们能在这里获取vuex的变量，比如存放在里面的token变量
 
 const install = (Vue, vm) => {
 	// 此为自定义配置参数，具体参数见上方说明
 	Vue.prototype.$u.http.setConfig({
-		baseUrl: 'http://localhost:8080',/*https://www.myelephant.cn/babystory/api*/
+		baseUrl: 'http://localhost:8080/api',
 		headers: {
 			'content-type': 'application/json;charset=utf-8'
 		},
