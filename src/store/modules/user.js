@@ -1,13 +1,12 @@
-import storage from "@/store/modules/storage"
-
 const state = {
   token: '',
-  version: ''
+  version: '',
+  info: {
+    name: '明月'
+  }
 }
 const mutations = {}
-const getters = {
-  token: state => state.token
-}
+const getters = {}
 const actions = {}
 export default {
   namespaced: true,
@@ -15,8 +14,5 @@ export default {
   mutations,
   getters,
   actions,
-  modules: {
-    storage
-  }
 }
 

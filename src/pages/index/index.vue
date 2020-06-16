@@ -1,9 +1,11 @@
 <template>
   <view class="content">
     <u-navbar back-text="返回" :title="title" :is-back="true" />
-    {{user.version}}/
-    {{user.token}}
-    <u-button @click="modifyVuex">修改变量</u-button>
+    {{user.token}}/{{user.version}}/{{user.info.name}}
+    <u-button @click="modifyVuex1">修改变量1</u-button>
+
+    <u-button @click="modifyVuex2">修改变量2</u-button>
+
   </view>
 </template>
 
@@ -15,14 +17,16 @@
       }
     },
     onLoad() {
-      this.$u.toast('Hello uView!')
-      console.log('user', this.user)
     },
     computed: {},
     methods: {
-      modifyVuex() {
-        this.$u.vuex('user/version', '0.0.9', true)
-        this.$u.vuex('user/token', '123456', true)
+      modifyVuex1() {
+        this.$u.vuex('user/token', '11111', false)
+        this.$u.vuex('user/info.name', '李白', true)
+      },
+      modifyVuex2() {
+        this.$u.vuex('user/token', '22222', true)
+        this.$u.vuex('user/info.name', '白居易', true)
       }
     }
   }
