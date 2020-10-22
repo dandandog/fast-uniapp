@@ -6,10 +6,14 @@
 
     <u-button @click="modifyVuex2">修改变量2</u-button>
 
+    <u-button @click="onLogin">登入</u-button>
+
   </view>
 </template>
 
 <script>
+  import auth from '@/utils/auth'
+
   export default {
     data() {
       return {
@@ -17,9 +21,13 @@
       }
     },
     onLoad() {
+
     },
     computed: {},
     methods: {
+      onLogin() {
+        this.$u.api.test()
+      },
       modifyVuex1() {
         this.$u.vuex('user/token', '11111', false)
         this.$u.vuex('user/info.name', '李白', true)
