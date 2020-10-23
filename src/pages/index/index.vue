@@ -25,8 +25,9 @@
     },
     computed: {},
     methods: {
-      onLogin() {
-        this.$u.api.test()
+      async onLogin() {
+        const res = await this.$u.api.test()
+        console.log('res', res)
       },
       modifyVuex1() {
         this.$u.vuex('user/token', '11111', false)
