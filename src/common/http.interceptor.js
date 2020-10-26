@@ -18,6 +18,7 @@ const install = (Vue, vm) => {
 
   // 请求拦截，配置Token等参数
   Vue.prototype.$u.http.interceptor.request = (config) => {
+    console.log('params', config.data)
     const token = auth.getToken()
     if (config.url === '/user/login') config.header.noToken = true
     if (token) config.header[auth.TOKEN_KEY] = token
@@ -45,7 +46,6 @@ const install = (Vue, vm) => {
 
     } else if (res.data.code === 20000) {
       auth.setAttempts(0)
-      console.log('token', res.header[auth.TOKEN_KEY])
       auth.setToken(res.header[auth.TOKEN_KEY])
       console.log('result', res.data)
       return res.data
